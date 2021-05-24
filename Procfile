@@ -1,1 +1,1 @@
-web: gunicorn timeuuid.wsgi --log-file -
+web: gunicorn timeuid.wsgi --log-file -
