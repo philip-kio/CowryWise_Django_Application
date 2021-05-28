@@ -4,7 +4,7 @@ from .models import TimeUUID
 
 
 class TimeUUIDAdmin(admin.ModelAdmin):
-    list_display= ('time_date','uuid_value','text')
+    list_display= ('time_date','uuid_value',)
 
 
 admin.site.register(TimeUUID, TimeUUIDAdmin)

@@ -7,7 +7,6 @@ class TimeUUIDPostSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
             
-            'text',
             'uuid_value',
             'time_date'
         )

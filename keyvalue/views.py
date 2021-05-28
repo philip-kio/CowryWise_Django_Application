@@ -3,7 +3,7 @@ from .models import TimeUUID
 from .serializers import TimeUUIDPostSerializer,TimeUUIDGetSerializer
 from rest_framework.response import Response
 from django.shortcuts import redirect
-
+from rest_framework.decorators import api_view
 # Create your views here.
 
 class ListTimeUuid(generics.ListAPIView):
@@ -11,17 +11,20 @@ class ListTimeUuid(generics.ListAPIView):
     serializer_class = TimeUUIDGetSerializer
 
 
-class CreateTimeView(generics.CreateAPIView):
-    queryset = TimeUUID.objects.all()
-    serializer_class = TimeUUIDPostSerializer
+# class CreateTimeView(generics.CreateAPIView):
+#     queryset = TimeUUID.objects.all()
+#     serializer_class = TimeUUIDPostSerializer
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+
+@api_view(['POST'])
+def createTimeView(request):
+    if request.method == "POST":
+        serializer = TimeUUIDPostSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         serializer.save()
-        
+
         if serializer.save():
             return redirect('key_value')
-        else:
-            return Response({'Response': 'did not work'})
+    else:
+        return Response({'Response': 'did not work'})

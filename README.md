@@ -2,10 +2,7 @@
 A simple API that returns TimeStamp and UUID.
 
 
-The project/task is deployed on Heroku.
 
-Here is the link to the ListApi: https://cowrywise-api.herokuapp.com/api/v1/
+Here is the link to the ListApi: http:127.0.0.1:8000/api/v1/list/
 
-you can also input data into the database: https://cowrywise-api.herokuapp.com/api/v1/create/
- 
-just type in a letter in the text field.
+
