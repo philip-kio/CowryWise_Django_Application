@@ -11,9 +11,6 @@ class ListTimeUuid(generics.ListAPIView):
     serializer_class = TimeUUIDGetSerializer
 
 
-# class CreateTimeView(generics.CreateAPIView):
-#     queryset = TimeUUID.objects.all()
-#     serializer_class = TimeUUIDPostSerializer
 
 
 @api_view(['POST'])
